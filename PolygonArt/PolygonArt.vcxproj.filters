@@ -136,6 +136,9 @@
     <Filter Include="Resource Files\engine\font\min">
       <UniqueIdentifier>{1b103960-f11a-4515-b4f1-f59333ce00d9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Canvas">
+      <UniqueIdentifier>{b877685c-cd14-4762-b437-688e80f637fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -145,7 +148,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Scripts\Canvas\PolygonCanvas.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Canvas</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -813,7 +816,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\Canvas\PolygonCanvas.h">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Canvas</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
