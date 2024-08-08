@@ -159,6 +159,9 @@
     <ClCompile Include="Scripts\Scene\PaintScene.cpp">
       <Filter>Source Files\Scene</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp">
+      <Filter>Source Files\Scene\Editor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -831,6 +834,9 @@
       <Filter>Source Files\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\Scene\Editor\Editor.h">
+      <Filter>Source Files\Scene\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Editor\VertexEditor.h">
       <Filter>Source Files\Scene\Editor</Filter>
     </ClInclude>
   </ItemGroup>

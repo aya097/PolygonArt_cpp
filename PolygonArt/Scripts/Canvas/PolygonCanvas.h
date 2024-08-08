@@ -20,7 +20,8 @@ public:
 	PolygonCanvas();
 	// Vertex の処理 
 	void AddVertex(const Canvas::Vertex& vertex);
-	void RemoveVertex(int const number);
+	void RemoveVertex(const int number);
+	void ExchangeVertex(const int number, const Canvas::Vertex& vertex);
 	const Array<Canvas::Vertex>& GetVertices() const;
 
 	// Polygon の処理

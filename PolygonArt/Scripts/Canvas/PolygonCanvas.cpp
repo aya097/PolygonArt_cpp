@@ -13,6 +13,11 @@ void PolygonCanvas::RemoveVertex(int const number)
 	UpdatePolygonByRemoveVertex(number);
 }
 
+void PolygonCanvas::ExchangeVertex(const int number, const Canvas::Vertex& vertex)
+{
+	vertices[number] = vertex;
+}
+
 const Array<Canvas::Vertex>& PolygonCanvas::GetVertices() const
 {
 	return vertices;

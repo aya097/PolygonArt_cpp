@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Scripts\Canvas\PolygonCanvas.cpp" />
+    <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp" />
     <ClCompile Include="Scripts\Scene\PaintScene.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -329,6 +330,7 @@
   <ItemGroup>
     <ClInclude Include="Scripts\Canvas\PolygonCanvas.h" />
     <ClInclude Include="Scripts\Scene\Editor\Editor.h" />
+    <ClInclude Include="Scripts\Scene\Editor\VertexEditor.h" />
     <ClInclude Include="Scripts\Scene\PaintScene.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
