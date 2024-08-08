@@ -21,26 +21,7 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-	// 頂点の編集
-	{
-		// 頂点の追加
-		if (canvasRect.leftClicked())
-		{
-			canvas.AddVertex(Canvas::Vertex{ Cursor::Pos() });
-		}
-	}
-	// 頂点の削除
-	{
-		auto v = canvas.GetVertices();
-		for (int i = 0; i < v.size(); i++)
-		{
-			if (Circle{ v[i].Pos,10 }.rightClicked())
-			{
-				canvas.RemoveVertex(i);
-				break;
-			}
-		}
-	}
+	vertexEditor.Edit(canvas);
 }
 
 void PaintScene::Draw()

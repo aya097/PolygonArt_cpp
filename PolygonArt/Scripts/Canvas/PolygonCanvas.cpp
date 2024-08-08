@@ -1,6 +1,5 @@
 ﻿#include "PolygonCanvas.h"
 
-PolygonCanvas::PolygonCanvas() = default;
 
 void PolygonCanvas::AddVertex(const Canvas::Vertex& vertex)
 {

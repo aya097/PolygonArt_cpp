@@ -17,7 +17,7 @@ namespace Canvas
 class PolygonCanvas
 {
 public:
-	PolygonCanvas();
+	PolygonCanvas() = default;
 	// Vertex の処理 
 	void AddVertex(const Canvas::Vertex& vertex);
 	void RemoveVertex(const int number);
