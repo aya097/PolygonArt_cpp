@@ -17,8 +17,13 @@ namespace Canvas
 class PolygonCanvas
 {
 public:
-	void AddVertex(Canvas::Vertex& const vertex);
+	PolygonCanvas();
+	void AddVertex(const Canvas::Vertex& vertex);
 	void RemoveVertex(int const number);
+	const Array<Canvas::Vertex>& GetVertices() const
+	{
+		return Vertices;
+	}
 private:
 	Array<Canvas::Vertex> Vertices;
 	Array<Canvas::Polygon> Polygons;

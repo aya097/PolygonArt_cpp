@@ -1,6 +1,8 @@
 ﻿#include "PolygonCanvas.h"
 
-void PolygonCanvas::AddVertex(Canvas::Vertex& const vertex)
+PolygonCanvas::PolygonCanvas() = default;
+
+void PolygonCanvas::AddVertex(const Canvas::Vertex& vertex)
 {
 	Vertices << vertex;
 }
@@ -8,4 +10,9 @@ void PolygonCanvas::AddVertex(Canvas::Vertex& const vertex)
 void PolygonCanvas::RemoveVertex(int const number)
 {
 	Vertices.erase(Vertices.begin() + number);
+}
+
+const Array<Canvas::Vertex>& PolygonCanvas::GetVertices() const
+{
+	return Vertices;
 }
