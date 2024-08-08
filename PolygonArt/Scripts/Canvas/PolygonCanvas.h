@@ -32,6 +32,6 @@ private:
 	// Vertex が削除さえれたときの Polyognの処理
 	void UpdatePolygonByRemoveVertex(const int number);
 
-	Array<Canvas::Vertex> Vertices;
-	Array<Canvas::Polygon> Polygons;
+	Array<Canvas::Vertex> vertices;
+	Array<Canvas::Polygon> polygons;
 };

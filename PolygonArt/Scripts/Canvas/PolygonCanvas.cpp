@@ -4,45 +4,45 @@ PolygonCanvas::PolygonCanvas() = default;
 
 void PolygonCanvas::AddVertex(const Canvas::Vertex& vertex)
 {
-	Vertices << vertex;
+	vertices << vertex;
 }
 
 void PolygonCanvas::RemoveVertex(int const number)
 {
-	Vertices.erase(Vertices.begin() + number);
+	vertices.erase(vertices.begin() + number);
 	UpdatePolygonByRemoveVertex(number);
 }
 
 const Array<Canvas::Vertex>& PolygonCanvas::GetVertices() const
 {
-	return Vertices;
+	return vertices;
 }
 
 void PolygonCanvas::AddPolygon(const Canvas::Polygon& polygon)
 {
-	Polygons << polygon;
+	polygons << polygon;
 }
 
 void PolygonCanvas::RemovePolygon(const int number)
 {
-	Polygons.erase(Polygons.begin() + number);
+	polygons.erase(polygons.begin() + number);
 }
 
 const Array<Canvas::Polygon>& PolygonCanvas::GetPolygons() const
 {
-	return Polygons;
+	return polygons;
 }
 
 void PolygonCanvas::UpdatePolygonByRemoveVertex(const int number)
 {
 	// 削除されたインデックスを含む Polygon を削除 
-	Polygons.remove_if([&number](const Canvas::Polygon& p)
+	polygons.remove_if([&number](const Canvas::Polygon& p)
 		{
 			return std::any_of(p.Index.begin(), p.Index.end(), [&number](int n) { return n == number; });
 		});
 
 	// インデックスを前に詰める
-	Polygons = Polygons.map([&number](Canvas::Polygon p)
+	polygons = polygons.map([&number](Canvas::Polygon p)
 	{
 		for (int& i : p.Index)
 		{

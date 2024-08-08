@@ -2,15 +2,15 @@
 
 void PaintScene::Init()
 {
-	canvas.AddVertex(Canvas::Vertex{ Point{ 100,100 } });
-	canvas.AddVertex(Canvas::Vertex{ Point{ 200,300 } });
-	canvas.AddVertex(Canvas::Vertex{ Point{ 300,100 } });
-	canvas.AddVertex(Canvas::Vertex{ Point{ 400,300 } });
-	canvas.AddVertex(Canvas::Vertex{ Point{ 500,100 } });
-	canvas.AddVertex(Canvas::Vertex{ Point{ 600,300 } });
-	canvas.AddPolygon(Canvas::Polygon{ {1,2,3},Palette::Red});
-	/*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
-	canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 100,100 } });
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 200,300 } });
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 300,100 } });
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 400,300 } });
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 500,100 } });
+	//canvas.AddVertex(Canvas::Vertex{ Point{ 600,300 } });
+	//canvas.AddPolygon(Canvas::Polygon{ {1,2,3},Palette::Red});
+	///*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
+	//canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
 
 	Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
 	Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
@@ -21,7 +21,26 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-
+	// 頂点の編集
+	{
+		// 頂点の追加
+		if (canvasRect.leftClicked())
+		{
+			canvas.AddVertex(Canvas::Vertex{ Cursor::Pos() });
+		}
+	}
+	// 頂点の削除
+	{
+		auto v = canvas.GetVertices();
+		for (int i = 0; i < v.size(); i++)
+		{
+			if (Circle{ v[i].Pos,10 }.rightClicked())
+			{
+				canvas.RemoveVertex(i);
+				break;
+			}
+		}
+	}
 }
 
 void PaintScene::Draw()
@@ -48,4 +67,10 @@ void PaintScene::Draw()
 			Triangle{ v[p.Index[0]].Pos,v[p.Index[1]].Pos, v[p.Index[2]].Pos }.draw(p.Color);
 		}
 	}
+}
+
+const PaintOptions PaintScene::PaintOptionSelector(PaintMode paintMode) const
+{
+	PaintOptions paintOption{ true,true };
+	return paintOption;
 }
