@@ -35,12 +35,13 @@ const Array<Canvas::Polygon>& PolygonCanvas::GetPolygons() const
 
 void PolygonCanvas::UpdatePolygonByRemoveVertex(const int number)
 {
-	
+	// 削除されたインデックスを含む Polygon を削除 
 	Polygons.remove_if([&number](const Canvas::Polygon& p)
 		{
 			return std::any_of(p.Index.begin(), p.Index.end(), [&number](int n) { return n == number; });
 		});
 
+	// インデックスを前に詰める
 	Polygons = Polygons.map([&number](Canvas::Polygon p)
 	{
 		for (int& i : p.Index)
