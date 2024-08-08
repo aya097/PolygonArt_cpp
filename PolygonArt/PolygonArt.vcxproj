@@ -328,6 +328,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Scripts\Canvas\PolygonCanvas.h" />
+    <ClInclude Include="Scripts\Scene\Editor\Editor.h" />
     <ClInclude Include="Scripts\Scene\PaintScene.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
