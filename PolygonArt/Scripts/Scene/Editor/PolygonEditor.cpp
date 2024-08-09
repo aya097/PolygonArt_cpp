@@ -2,8 +2,17 @@
 
 void PolygonEditor::Edit(PolygonCanvas& canvas)
 {
+	if (not EditVertex(canvas))
+	{
 
-	// 頂点の選択
+	}
+}
+
+bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
+{
+	// なにかしら操作された？
+	bool isOperated = false;
+	// 頂点の選択/解除
 	{
 		auto v = canvas.GetVertices();
 		bool isSelected = false;
@@ -11,10 +20,12 @@ void PolygonEditor::Edit(PolygonCanvas& canvas)
 		{
 			if (Circle{ v[i].Pos,radius }.leftClicked())
 			{
-				if(not selectedVertexIndices.contains(i))
+				if (selectedVertexIndices.contains(i))
+					selectedVertexIndices.remove(i);
+				else
 					selectedVertexIndices << i;
 				isSelected = true;
-				Print << selectedVertexIndices;
+				isOperated = true;
 				break;
 			}
 		}
@@ -32,11 +43,12 @@ void PolygonEditor::Edit(PolygonCanvas& canvas)
 			if (Circle{ v[i].Pos,radius }.rightClicked())
 			{
 				selectedVertexIndices.remove_if([i](int n) { return n == i; });
+				isOperated = true;
 				break;
 			}
 		}
 	}
-	// Polygon 生成
+	// Polygon 生成（頂点の操作に依存するため）
 	{
 		auto v = canvas.GetVertices();
 		if (selectedVertexIndices.size() >= 3)
@@ -58,4 +70,45 @@ void PolygonEditor::Edit(PolygonCanvas& canvas)
 			selectedVertexIndices.clear();
 		}
 	}
+
+	return isOperated;
+}
+
+bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
+{
+	// なにかしら操作された？
+	bool isOperated = false;
+	// Polygon の選択/解除
+	{
+		auto p = canvas.GetPolygons();
+		auto v = canvas.GetVertices();
+		for (int i = 0; i < p.size(); i++)
+		{
+			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.leftClicked())
+			{
+				slectedPolyognIndex = slectedPolyognIndex == i ? -1 : i;
+				isOperated = true;
+				break;
+			}
+		}
+	}
+	// Polygon の削除
+	{
+		auto p = canvas.GetPolygons();
+		auto v = canvas.GetVertices();
+		for (int i = 0; i < p.size(); i++)
+		{
+			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.rightClicked())
+			{
+				if (slectedPolyognIndex == i)
+				{
+					canvas.RemovePolygon(i);
+				}
+				isOperated = true;
+				break;
+			}
+		}
+	}
+	return isOperated;
+
 }
