@@ -145,6 +145,9 @@
     <Filter Include="Source Files\Scene\Editor">
       <UniqueIdentifier>{983411c8-b1bf-4b91-8eec-405f8dbd9169}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Scene\Drawer">
+      <UniqueIdentifier>{bb5333e3-d95e-4025-97fa-a0fc677b1404}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -161,6 +164,9 @@
     </ClCompile>
     <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp">
       <Filter>Source Files\Scene\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp">
+      <Filter>Source Files\Scene\Drawer</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -838,6 +844,12 @@
     </ClInclude>
     <ClInclude Include="Scripts\Scene\Editor\VertexEditor.h">
       <Filter>Source Files\Scene\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Drawer\Drawer.h">
+      <Filter>Source Files\Scene\Drawer</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Drawer\VertexDrawer.h">
+      <Filter>Source Files\Scene\Drawer</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

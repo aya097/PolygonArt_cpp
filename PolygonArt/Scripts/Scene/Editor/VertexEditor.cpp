@@ -7,7 +7,7 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,10 }.leftClicked())
+			if (Circle{ v[i].Pos,radius }.leftClicked())
 			{
 				SelectedVertexIndex = i;
 				break;
@@ -27,7 +27,7 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,10 }.rightClicked())
+			if (Circle{ v[i].Pos,radius }.rightClicked())
 			{
 				canvas.RemoveVertex(i);
 				break;
