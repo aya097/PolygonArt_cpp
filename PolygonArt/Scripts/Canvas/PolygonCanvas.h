@@ -6,14 +6,29 @@ namespace Canvas
 	struct Vertex
 	{
 		Point Pos;
+		bool IsSlected = false;
 	};
 
 	struct Polygon
 	{
 		std::array<int ,3> Index;
 		Color Color;
+		bool IsSelected = false;
 	};
 }
+
+struct DrawVertexOptions
+{
+	Color DefaultColor;
+	Color SelectedCplor;
+	int Radius;
+};
+
+struct DrawPolygonOptions
+{
+	Color SlectedEdgeColor;
+};
+
 class PolygonCanvas
 {
 public:
