@@ -12,7 +12,16 @@ void VertexDrawer::Draw(const PolygonCanvas& canvas)
 	{
 		for (Canvas::Vertex v : canvas.GetVertices())
 		{
-			Circle{ v.Pos,10 }.draw(Palette::Yellow);
+			if (v.IsSelected)
+			{
+				Circle{ v.Pos,canvas.VertexOptions.Radius }
+				.drawFrame(canvas.VertexOptions.Thinkness, 0, canvas.VertexOptions.SelectedColor);
+			}
+			else
+			{
+				Circle{ v.Pos,canvas.VertexOptions.Radius }
+				.drawFrame(canvas.VertexOptions.Thinkness,0,canvas.VertexOptions.DefaultColor);
+			}
 		}
 	}
 }

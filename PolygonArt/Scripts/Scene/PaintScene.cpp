@@ -24,6 +24,9 @@ void PaintScene::Update()
 {
 	paintModeUpdater.Update();
 
+	// Select状態の初期化
+	canvas.FillIsSelected(false);
+
 	// PaintMode に応じた処理
 	if (canvasRect.mouseOver())
 		editSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Edit(canvas);
@@ -36,6 +39,7 @@ void PaintScene::Draw()
 		canvasRect.draw(Palette::White);
 	}
 
+	
 	// PaintMode に応じた処理
 	drawSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Draw(canvas);
 }

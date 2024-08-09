@@ -8,5 +8,4 @@ public :
 	VertexDrawer(std::unique_ptr<Drawer> drawer) : Drawer(std::move(drawer)){};
 	void Draw(const PolygonCanvas& canvas) override;
 private:
-	int radius = 10;
 };
