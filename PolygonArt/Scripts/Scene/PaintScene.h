@@ -1,13 +1,9 @@
 ﻿#pragma once
 #include <Siv3D.hpp>
 #include "../Canvas/PolygonCanvas.h"
-#include "PaintParams.h"
+#include "PaintModeUpdater.h"
 #include "Selector/DrawerSelector.h"
 #include "Selector/EditorSelector.h"
-//#include "Editor/VertexEditor.h"
-//#include "Editor/PolygonEditor.h"
-//#include "Drawer/VertexDrawer.h"
-//#include "Drawer/PolygonDrawer.h"
 
 
 class PaintScene
@@ -25,7 +21,7 @@ private:
 	//PolygonEditor polygonEditor;
 	//VertexDrawer vertexDrawer;
 	//PolygonDrawer polygonDrawer;
-
+	PaintModeUpdater paintModeUpdater;
 	DrawerSelector drawSelector;
 	EditorSelector editSelector;
 	PolygonCanvas canvas;

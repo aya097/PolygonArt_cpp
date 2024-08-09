@@ -12,15 +12,19 @@ void PaintScene::Init()
 	/*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
 	canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
 
-	Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
-	Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
+	//Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
+	//Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
 
 
-	canvasRect = Rect{ 50,50,1500,1000 };
+	canvasRect = Rect{ 20,20,1500,1040 };
+	Scene::SetBackground(ColorF{0.9});
 }
 
 void PaintScene::Update()
 {
+	//ClearPrint();
+	paintModeUpdater.Update();
+	Print << (int)paintModeUpdater.GetPaintMode();
 	if (canvasRect.mouseOver())
 		editSelector.SelectByPaintMode(PaintMode::EditVertex)->Edit(canvas);
 }

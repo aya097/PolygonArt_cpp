@@ -183,6 +183,9 @@
     <ClCompile Include="Scripts\Scene\Selector\DrawerSelector.cpp">
       <Filter>Source Files\Scene\Selector</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\Scene\PaintModeUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -883,6 +886,9 @@
     </ClInclude>
     <ClInclude Include="Scripts\Scene\PaintParams.h">
       <Filter>Source Files\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\PaintModeUpdater.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
