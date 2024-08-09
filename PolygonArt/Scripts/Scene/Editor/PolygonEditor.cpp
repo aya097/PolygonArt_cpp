@@ -88,7 +88,7 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 		{
 			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.leftClicked())
 			{
-				slectedPolyognIndex = slectedPolyognIndex == i ? -1 : i;
+				selectedPolyognIndex = selectedPolyognIndex == i ? -1 : i;
 				isOperated = true;
 				break;
 			}
@@ -102,7 +102,7 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 		{
 			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.rightClicked())
 			{
-				if (slectedPolyognIndex == i)
+				if (selectedPolyognIndex == i)
 				{
 					canvas.RemovePolygon(i);
 				}
@@ -117,5 +117,17 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 
 void PolygonEditor::UpdateStatus(PolygonCanvas& canvas)
 {
+	// Vertex の更新
+	auto v = canvas.GetVertices();
+	for (int i = 0; i < selectedVertexIndices.size(); i++)
+	{
+		v[i].IsSelected = true;
+	}
 
+	// Polygon の更新
+	auto p = canvas.GetPolygons();
+	if (selectedPolyognIndex != -1)
+	{
+		p[selectedPolyognIndex].IsSelected = true;
+	}
 }

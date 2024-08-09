@@ -13,6 +13,6 @@ private:
 	// 選択されている頂点リスト
 	Array<int> selectedVertexIndices;
 	// 選択されているポリゴン
-	int slectedPolyognIndex = -1;
+	int selectedPolyognIndex = -1;
 	int radius = 10;
 };

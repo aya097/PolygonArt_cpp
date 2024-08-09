@@ -6,7 +6,7 @@ namespace Canvas
 	struct Vertex
 	{
 		Point Pos;
-		bool IsSlected = false;
+		bool IsSelected = false;
 	};
 
 	struct Polygon
@@ -43,6 +43,8 @@ public:
 	void AddPolygon(const Canvas::Polygon& polygon);
 	void RemovePolygon(const int number);
 	const Array<Canvas::Polygon>& GetPolygons() const;
+
+	void FillIsSelected(bool isSelected);
 	
 private:
 	// Vertex が削除さえれたときの Polyognの処理

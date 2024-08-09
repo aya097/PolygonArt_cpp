@@ -55,3 +55,15 @@ void PolygonCanvas::UpdatePolygonByRemoveVertex(const int number)
 		return p;
 	});
 }
+
+void PolygonCanvas::FillIsSelected(bool isSelected)
+{
+	for (Canvas::Vertex& v : vertices)
+	{
+		v.IsSelected = isSelected;
+	}
+	for (Canvas::Polygon& p : polygons)
+	{
+		p.IsSelected = isSelected;
+	}
+}

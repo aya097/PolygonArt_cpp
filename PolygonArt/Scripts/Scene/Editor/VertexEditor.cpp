@@ -16,9 +16,10 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 	}
 	// 頂点の移動
 	{
+		auto v = canvas.GetVertices();
 		if (SelectedVertexIndex != -1 && MouseL.pressed())
 		{
-			canvas.ExchangeVertex(SelectedVertexIndex, Canvas::Vertex{ Cursor::Pos() });
+			v[SelectedVertexIndex].Pos = Cursor::Pos();
 		}
 		else SelectedVertexIndex = -1;
 	}
@@ -39,6 +40,14 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		if (SelectedVertexIndex == -1 && MouseL.down())
 		{
 			canvas.AddVertex(Canvas::Vertex{ Cursor::Pos() });
+		}
+	}
+	// 状態の更新
+	{
+		auto v = canvas.GetVertices();
+		if (SelectedVertexIndex != -1)
+		{
+			v[SelectedVertexIndex].IsSelected = true;
 		}
 	}
 }
