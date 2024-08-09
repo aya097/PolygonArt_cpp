@@ -50,6 +50,9 @@ public:
 	void FillIsSelected(bool isSelected);
 
 
+
+
+	Color polygonColor = Palette::Red;
 	const DrawVertexOptions VertexOptions{ Palette::Green,Palette::Red,10,10 };
 	const DrawPolygonOptions PolygonOptions{ Palette::Aqua , 5};
 

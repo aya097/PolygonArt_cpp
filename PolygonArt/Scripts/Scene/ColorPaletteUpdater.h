@@ -4,8 +4,9 @@
 class ColorPaletteUpdater
 {
 public:
+	ColorPaletteUpdater(Color& color) :color(color) {};
 	void Update();
 	const Color& GetColor();
 private:
-	Color color = Palette::White;
+	Color& color;
 };

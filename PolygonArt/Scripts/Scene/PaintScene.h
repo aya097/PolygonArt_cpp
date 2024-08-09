@@ -19,7 +19,7 @@ private:
 	PaintModeUpdater paintModeUpdater;
 	DrawerSelector drawSelector;
 	EditorSelector editSelector;
-	ColorPaletteUpdater colorPaletteUpdater;
+	ColorPaletteUpdater colorPaletteUpdater{canvas.polygonColor};
 	Rect canvasRect;
 };
 
