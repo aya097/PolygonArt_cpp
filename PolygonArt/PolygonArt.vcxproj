@@ -120,6 +120,7 @@
     <ClCompile Include="Scripts\Scene\ColorPaletteUpdater.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\PolygonDrawer.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp" />
+    <ClCompile Include="Scripts\Scene\Editor\ApplyColorEditor.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\CopyColorEditor.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\PolygonEditor.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp" />
@@ -342,6 +343,7 @@
     <ClInclude Include="Scripts\Scene\Drawer\Drawer.h" />
     <ClInclude Include="Scripts\Scene\Drawer\PolygonDrawer.h" />
     <ClInclude Include="Scripts\Scene\Drawer\VertexDrawer.h" />
+    <ClInclude Include="Scripts\Scene\Editor\ApplyColorEditor.h" />
     <ClInclude Include="Scripts\Scene\Editor\CopyColorEditor.h" />
     <ClInclude Include="Scripts\Scene\Editor\Editor.h" />
     <ClInclude Include="Scripts\Scene\Editor\PolygonEditor.h" />

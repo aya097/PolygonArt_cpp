@@ -4,6 +4,7 @@
 #include "../Editor/VertexEditor.h"
 #include "../Editor/PolygonEditor.h"
 #include "../Editor/CopyColorEditor.h"
+#include "../Editor/ApplyColorEditor.h"
 
 class EditorSelector
 {

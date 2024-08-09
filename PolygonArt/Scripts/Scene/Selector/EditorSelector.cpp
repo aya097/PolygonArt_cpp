@@ -8,7 +8,7 @@ EditorSelector::EditorSelector()
 	editors[PaintMode::EditVertex] = std::make_shared<VertexEditor>();
 	editors[PaintMode::EditPolygon] = std::make_shared<PolygonEditor>();
 	editors[PaintMode::CopyColor] = std::make_shared<CopyColorEditor>();
-	editors[PaintMode::ApplyColor] = std::make_shared<NoneEditor>();
+	editors[PaintMode::ApplyColor] = std::make_shared<ApplyColorEditor>();
 }
 
 const std::shared_ptr<Editor> EditorSelector::SelectByPaintMode(const PaintMode& paintMode)
