@@ -8,6 +8,7 @@ void PolygonEditor::Edit(PolygonCanvas& canvas)
 		EditPolygon(canvas);
 	}
 	UpdateStatus(canvas);
+
 }
 
 bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
@@ -20,7 +21,7 @@ bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
 		bool isSelected = false;
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,radius }.leftClicked())
+			if (Circle{ v[i].Pos,canvas.VertexOptions.Radius }.leftClicked())
 			{
 				if (selectedVertexIndices.contains(i))
 					selectedVertexIndices.remove(i);
@@ -42,7 +43,7 @@ bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,radius }.rightClicked())
+			if (Circle{ v[i].Pos,canvas.VertexOptions.Radius }.rightClicked())
 			{
 				selectedVertexIndices.remove_if([i](int n) { return n == i; });
 				isOperated = true;
@@ -105,6 +106,7 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 				if (selectedPolyognIndex == i)
 				{
 					canvas.RemovePolygon(i);
+					selectedPolyognIndex = -1;
 				}
 				isOperated = true;
 				break;
@@ -121,13 +123,15 @@ void PolygonEditor::UpdateStatus(PolygonCanvas& canvas)
 	auto v = canvas.GetVertices();
 	for (int i = 0; i < selectedVertexIndices.size(); i++)
 	{
-		v[i].IsSelected = true;
+		canvas.ExchangeVertex(selectedVertexIndices[i], Canvas::Vertex{ v[selectedVertexIndices[i]].Pos,true });
 	}
 
 	// Polygon の更新
 	auto p = canvas.GetPolygons();
 	if (selectedPolyognIndex != -1)
 	{
-		p[selectedPolyognIndex].IsSelected = true;
+		Canvas::Polygon pol = p[selectedPolyognIndex];
+		pol.IsSelected = true;
+		canvas.ExchangePolygon(selectedPolyognIndex, pol);
 	}
 }

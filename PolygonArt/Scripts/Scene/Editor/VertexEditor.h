@@ -7,5 +7,4 @@ public :
 	void Edit(PolygonCanvas& canvas) override;
 private:
 	int SelectedVertexIndex = -1;
-	int radius = 10;
 };

@@ -14,5 +14,4 @@ private:
 	Array<int> selectedVertexIndices;
 	// 選択されているポリゴン
 	int selectedPolyognIndex = -1;
-	int radius = 10;
 };

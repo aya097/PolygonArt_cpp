@@ -20,13 +20,15 @@ namespace Canvas
 struct DrawVertexOptions
 {
 	Color DefaultColor;
-	Color SelectedCplor;
+	Color SelectedColor;
 	int Radius;
+	int Thinkness;
 };
 
 struct DrawPolygonOptions
 {
 	Color SlectedEdgeColor;
+	int Thinckness;
 };
 
 class PolygonCanvas
@@ -42,10 +44,15 @@ public:
 	// Polygon の処理
 	void AddPolygon(const Canvas::Polygon& polygon);
 	void RemovePolygon(const int number);
+	void ExchangePolygon(const int number, const Canvas::Polygon& polygon);
 	const Array<Canvas::Polygon>& GetPolygons() const;
 
 	void FillIsSelected(bool isSelected);
-	
+
+
+	const DrawVertexOptions VertexOptions{ Palette::Green,Palette::Red,10,10 };
+	const DrawPolygonOptions PolygonOptions{ Palette::Aqua , 10};
+
 private:
 	// Vertex が削除さえれたときの Polyognの処理
 	void UpdatePolygonByRemoveVertex(const int number);

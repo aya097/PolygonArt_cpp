@@ -32,6 +32,11 @@ void PolygonCanvas::RemovePolygon(const int number)
 	polygons.erase(polygons.begin() + number);
 }
 
+void PolygonCanvas::ExchangePolygon(const int number, const Canvas::Polygon& polygon)
+{
+	polygons[number] = polygon;
+}
+
 const Array<Canvas::Polygon>& PolygonCanvas::GetPolygons() const
 {
 	return polygons;

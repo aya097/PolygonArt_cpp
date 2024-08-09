@@ -7,7 +7,7 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,radius }.leftClicked())
+			if (Circle{ v[i].Pos,canvas.VertexOptions.Radius }.leftClicked())
 			{
 				SelectedVertexIndex = i;
 				break;
@@ -19,6 +19,7 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		if (SelectedVertexIndex != -1 && MouseL.pressed())
 		{
+			canvas.ExchangeVertex(SelectedVertexIndex, Canvas::Vertex{ Cursor::Pos(),true });
 			v[SelectedVertexIndex].Pos = Cursor::Pos();
 		}
 		else SelectedVertexIndex = -1;
@@ -28,7 +29,7 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		auto v = canvas.GetVertices();
 		for (int i = 0; i < v.size(); i++)
 		{
-			if (Circle{ v[i].Pos,radius }.rightClicked())
+			if (Circle{ v[i].Pos,canvas.VertexOptions.Radius }.rightClicked())
 			{
 				canvas.RemoveVertex(i);
 				break;
@@ -40,14 +41,6 @@ void VertexEditor::Edit(PolygonCanvas& canvas)
 		if (SelectedVertexIndex == -1 && MouseL.down())
 		{
 			canvas.AddVertex(Canvas::Vertex{ Cursor::Pos() });
-		}
-	}
-	// 状態の更新
-	{
-		auto v = canvas.GetVertices();
-		if (SelectedVertexIndex != -1)
-		{
-			v[SelectedVertexIndex].IsSelected = true;
 		}
 	}
 }
