@@ -121,6 +121,7 @@
     <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\PolygonEditor.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp" />
+    <ClCompile Include="Scripts\Scene\PaintModeUpdater.cpp" />
     <ClCompile Include="Scripts\Scene\PaintScene.cpp" />
     <ClCompile Include="Scripts\Scene\Selector\DrawerSelector.cpp" />
     <ClCompile Include="Scripts\Scene\Selector\EditorSelector.cpp" />
@@ -341,6 +342,7 @@
     <ClInclude Include="Scripts\Scene\Editor\Editor.h" />
     <ClInclude Include="Scripts\Scene\Editor\PolygonEditor.h" />
     <ClInclude Include="Scripts\Scene\Editor\VertexEditor.h" />
+    <ClInclude Include="Scripts\Scene\PaintModeUpdater.h" />
     <ClInclude Include="Scripts\Scene\PaintParams.h" />
     <ClInclude Include="Scripts\Scene\PaintScene.h" />
     <ClInclude Include="Scripts\Scene\Selector\DrawerSelector.h" />

@@ -12,17 +12,21 @@ void PaintScene::Init()
 	/*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
 	canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
 
-	Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
-	Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
+	//Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
+	//Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
 
 
-	canvasRect = Rect{ 50,50,1500,1000 };
+	canvasRect = Rect{ 20,20,1500,1040 };
+	Scene::SetBackground(ColorF{0.9});
 }
 
 void PaintScene::Update()
 {
+	paintModeUpdater.Update();
+
+	// PaintMode に応じた処理
 	if (canvasRect.mouseOver())
-		editSelector.SelectByPaintMode(PaintMode::EditVertex)->Edit(canvas);
+		editSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Edit(canvas);
 }
 
 void PaintScene::Draw()
@@ -31,5 +35,7 @@ void PaintScene::Draw()
 	{
 		canvasRect.draw(Palette::White);
 	}
-	drawSelector.SelectByPaintMode(PaintMode::EditPolygon)->Draw(canvas);
+
+	// PaintMode に応じた処理
+	drawSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Draw(canvas);
 }

@@ -7,6 +7,8 @@ DrawerSelector::DrawerSelector()
 	drawers[PaintMode::ShowCanvas] = std::make_shared<VertexDrawer>(std::make_unique<PolygonDrawer>());
 	drawers[PaintMode::EditVertex] = std::make_shared<VertexDrawer>(std::make_unique<PolygonDrawer>());
 	drawers[PaintMode::EditPolygon] = std::make_shared<VertexDrawer>(std::make_unique<PolygonDrawer>());
+	drawers[PaintMode::ApplyColor] = std::make_shared<PolygonDrawer>();
+	drawers[PaintMode::CopyColor] = std::make_shared<PolygonDrawer>();
 }
 
 const std::shared_ptr<Drawer> DrawerSelector::SelectByPaintMode(const PaintMode& paintMode)

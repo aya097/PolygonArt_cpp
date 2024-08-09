@@ -6,5 +6,7 @@ enum class PaintMode
 	ShowCanvas,
 	EditVertex,
 	EditPolygon,
+	CopyColor,
+	ApplyColor
 };
 
