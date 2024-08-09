@@ -3,6 +3,7 @@
 #include "../Editor/Editor.h"
 #include "../Editor/VertexEditor.h"
 #include "../Editor/PolygonEditor.h"
+#include "../Editor/CopyColorEditor.h"
 
 class EditorSelector
 {
