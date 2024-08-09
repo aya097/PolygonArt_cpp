@@ -21,8 +21,8 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-	if(canvasRect.mouseOver())
-		polygonEditor.Edit(canvas);
+	//if(canvasRect.mouseOver())
+	//	polygonEditor.Edit(canvas);
 }
 
 void PaintScene::Draw()
@@ -31,12 +31,5 @@ void PaintScene::Draw()
 	{
 		canvasRect.draw(Palette::White);
 	}
-	polygonDrawer.Draw(canvas);
-	vertexDrawer.Draw(canvas);
-}
-
-const PaintOptions PaintScene::PaintOptionSelector(PaintMode paintMode) const
-{
-	PaintOptions paintOption{ true,true };
-	return paintOption;
+	drawSelector.SelectByPaintMode(PaintMode::EditPolygon)->Draw(canvas);
 }
