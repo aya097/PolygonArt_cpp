@@ -4,6 +4,7 @@
 #include "PaintModeUpdater.h"
 #include "Selector/DrawerSelector.h"
 #include "Selector/EditorSelector.h"
+#include "ColorPaletteUpdater.h"
 
 
 class PaintScene
@@ -14,18 +15,11 @@ public:
 	void Update();
 	void Draw();
 private:
-	// PaintMode に応じて PaintOptions を返す
-	//const PaintOptions PaintOptionSelector(PaintMode paintMode) const;
-
-	//VertexEditor vertexEditor;
-	//PolygonEditor polygonEditor;
-	//VertexDrawer vertexDrawer;
-	//PolygonDrawer polygonDrawer;
+	PolygonCanvas canvas;
 	PaintModeUpdater paintModeUpdater;
 	DrawerSelector drawSelector;
 	EditorSelector editSelector;
-	PolygonCanvas canvas;
+	ColorPaletteUpdater colorPaletteUpdater;
 	Rect canvasRect;
-	//PaintMode paintMode;
 };
 

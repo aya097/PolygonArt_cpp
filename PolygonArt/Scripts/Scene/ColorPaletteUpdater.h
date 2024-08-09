@@ -7,5 +7,5 @@ public:
 	void Update();
 	const Color& GetColor();
 private:
-	Color color;
+	Color color = Palette::White;
 };

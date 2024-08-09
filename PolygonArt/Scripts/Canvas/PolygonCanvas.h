@@ -51,7 +51,7 @@ public:
 
 
 	const DrawVertexOptions VertexOptions{ Palette::Green,Palette::Red,10,10 };
-	const DrawPolygonOptions PolygonOptions{ Palette::Aqua , 10};
+	const DrawPolygonOptions PolygonOptions{ Palette::Aqua , 5};
 
 private:
 	// Vertex が削除さえれたときの Polyognの処理
