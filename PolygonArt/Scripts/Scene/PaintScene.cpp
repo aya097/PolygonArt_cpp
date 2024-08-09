@@ -33,15 +33,6 @@ void PaintScene::Draw()
 	}
 	vertexDrawer.Draw(canvas);
 
-	// Polygon の描画
-	{
-		auto v = canvas.GetVertices();
-
-		for (Canvas::Polygon p : canvas.GetPolygons())
-		{
-			Triangle{ v[p.Index[0]].Pos,v[p.Index[1]].Pos, v[p.Index[2]].Pos }.draw(p.Color);
-		}
-	}
 }
 
 const PaintOptions PaintScene::PaintOptionSelector(PaintMode paintMode) const
