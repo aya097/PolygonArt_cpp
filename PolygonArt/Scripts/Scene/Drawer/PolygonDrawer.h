@@ -5,6 +5,6 @@ class PolygonDrawer : public Drawer
 {
 public :
 	PolygonDrawer() {};
-	PolygonDrawer(std::shared_ptr<Drawer> drawer) : Drawer(drawer) {};
+	PolygonDrawer(std::unique_ptr<Drawer> drawer) : Drawer(std::move(drawer)) {};
 	void Draw(const PolygonCanvas& canvas) override;
 };

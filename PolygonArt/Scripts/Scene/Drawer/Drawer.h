@@ -6,9 +6,9 @@ class Drawer
 {
 public:
 	Drawer() {};
-	Drawer(std::shared_ptr<Drawer> drawer) :drawer(drawer) {};
+	Drawer(std::unique_ptr<Drawer> drawer) :drawer(std::move(drawer)) {};
 	virtual void Draw(const PolygonCanvas& canvas) = 0;
 	virtual ~Drawer() {};
 protected:
-	std::shared_ptr<Drawer> drawer;
+	std::unique_ptr<Drawer> drawer;
 };

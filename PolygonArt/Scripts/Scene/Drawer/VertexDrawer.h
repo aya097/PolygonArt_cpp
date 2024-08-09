@@ -5,7 +5,7 @@ class VertexDrawer : public Drawer
 {
 public :
 	VertexDrawer() {};
-	VertexDrawer(std::shared_ptr<Drawer> drawer) : Drawer(drawer){};
+	VertexDrawer(std::unique_ptr<Drawer> drawer) : Drawer(std::move(drawer)){};
 	void Draw(const PolygonCanvas& canvas) override;
 private:
 	int radius = 10;
