@@ -123,6 +123,7 @@
     <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp" />
     <ClCompile Include="Scripts\Scene\PaintScene.cpp" />
     <ClCompile Include="Scripts\Scene\Selector\DrawerSelector.cpp" />
+    <ClCompile Include="Scripts\Scene\Selector\EditorSelector.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -343,6 +344,7 @@
     <ClInclude Include="Scripts\Scene\PaintParams.h" />
     <ClInclude Include="Scripts\Scene\PaintScene.h" />
     <ClInclude Include="Scripts\Scene\Selector\DrawerSelector.h" />
+    <ClInclude Include="Scripts\Scene\Selector\EditorSelector.h" />
     <ClInclude Include="stdafx.h" />
   </ItemGroup>
   <ItemGroup>
