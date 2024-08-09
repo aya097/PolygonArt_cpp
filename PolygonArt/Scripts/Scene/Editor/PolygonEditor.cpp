@@ -62,13 +62,13 @@ bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
 			,v[selectedVertexIndices[2]].Pos
 			};
 			// 生成される三角形の中に他の頂点があれば生成しない
-			if (std::none_of(v.begin(), v.end(), [&tri](Canvas::Vertex v)
-				{
-					return tri.contains(v.Pos);
-				}))
+			//if (std::none_of(v.begin(), v.end(), [&tri](Canvas::Vertex v)
+			//	{
+			//		return tri.contains(v.Pos);
+			//	}))
 			{
 				canvas.AddPolygon(Canvas::Polygon{
-					{selectedVertexIndices[0],selectedVertexIndices[1],selectedVertexIndices[2]}, Palette::Red });
+					{selectedVertexIndices[0],selectedVertexIndices[1],selectedVertexIndices[2]}, canvas.polygonColor });
 			}
 			selectedVertexIndices.clear();
 		}
