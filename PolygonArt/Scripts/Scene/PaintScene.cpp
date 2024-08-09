@@ -22,11 +22,11 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-	//ClearPrint();
 	paintModeUpdater.Update();
-	Print << (int)paintModeUpdater.GetPaintMode();
+
+	// PaintMode に応じた処理
 	if (canvasRect.mouseOver())
-		editSelector.SelectByPaintMode(PaintMode::EditVertex)->Edit(canvas);
+		editSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Edit(canvas);
 }
 
 void PaintScene::Draw()
@@ -35,5 +35,7 @@ void PaintScene::Draw()
 	{
 		canvasRect.draw(Palette::White);
 	}
-	drawSelector.SelectByPaintMode(PaintMode::EditPolygon)->Draw(canvas);
+
+	// PaintMode に応じた処理
+	drawSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Draw(canvas);
 }
