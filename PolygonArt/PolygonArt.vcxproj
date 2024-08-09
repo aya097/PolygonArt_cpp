@@ -119,6 +119,7 @@
     <ClCompile Include="Scripts\Canvas\PolygonCanvas.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\PolygonDrawer.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp" />
+    <ClCompile Include="Scripts\Scene\Editor\PolygonEditor.cpp" />
     <ClCompile Include="Scripts\Scene\Editor\VertexEditor.cpp" />
     <ClCompile Include="Scripts\Scene\PaintScene.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -330,11 +331,13 @@
     <Xml Include="App\example\xml\test.xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\Downloads\doctest.h" />
     <ClInclude Include="Scripts\Canvas\PolygonCanvas.h" />
     <ClInclude Include="Scripts\Scene\Drawer\Drawer.h" />
     <ClInclude Include="Scripts\Scene\Drawer\PolygonDrawer.h" />
     <ClInclude Include="Scripts\Scene\Drawer\VertexDrawer.h" />
     <ClInclude Include="Scripts\Scene\Editor\Editor.h" />
+    <ClInclude Include="Scripts\Scene\Editor\PolygonEditor.h" />
     <ClInclude Include="Scripts\Scene\Editor\VertexEditor.h" />
     <ClInclude Include="Scripts\Scene\PaintScene.h" />
     <ClInclude Include="stdafx.h" />

@@ -2,15 +2,15 @@
 
 void PaintScene::Init()
 {
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 100,100 } });
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 200,300 } });
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 300,100 } });
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 400,300 } });
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 500,100 } });
-	//canvas.AddVertex(Canvas::Vertex{ Point{ 600,300 } });
-	//canvas.AddPolygon(Canvas::Polygon{ {1,2,3},Palette::Red});
-	///*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
-	//canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
+	canvas.AddVertex(Canvas::Vertex{ Point{ 100,100 } });
+	canvas.AddVertex(Canvas::Vertex{ Point{ 200,300 } });
+	canvas.AddVertex(Canvas::Vertex{ Point{ 300,100 } });
+	canvas.AddVertex(Canvas::Vertex{ Point{ 400,300 } });
+	canvas.AddVertex(Canvas::Vertex{ Point{ 500,100 } });
+	canvas.AddVertex(Canvas::Vertex{ Point{ 600,300 } });
+	canvas.AddPolygon(Canvas::Polygon{ {1,2,3},Palette::Red});
+	/*canvas.AddPolygon(Canvas::Polygon{ {2,3,4},Palette::Blue });
+	canvas.AddPolygon(Canvas::Polygon{ {4,5,1},Palette::Green });*/
 
 	Print << canvas.GetVertices().map([](Canvas::Vertex v) { return v.Pos; });
 	Print << canvas.GetPolygons().map([](Canvas::Polygon p) { return p.Index; });
@@ -22,7 +22,7 @@ void PaintScene::Init()
 void PaintScene::Update()
 {
 	if(canvasRect.mouseOver())
-		vertexEditor.Edit(canvas);
+		polygonEditor.Edit(canvas);
 }
 
 void PaintScene::Draw()
@@ -31,8 +31,8 @@ void PaintScene::Draw()
 	{
 		canvasRect.draw(Palette::White);
 	}
+	polygonDrawer.Draw(canvas);
 	vertexDrawer.Draw(canvas);
-
 }
 
 const PaintOptions PaintScene::PaintOptionSelector(PaintMode paintMode) const
