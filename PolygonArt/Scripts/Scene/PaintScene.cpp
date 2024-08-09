@@ -21,8 +21,8 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-	//if(canvasRect.mouseOver())
-	//	polygonEditor.Edit(canvas);
+	if (canvasRect.mouseOver())
+		editSelector.SelectByPaintMode(PaintMode::EditVertex)->Edit(canvas);
 }
 
 void PaintScene::Draw()

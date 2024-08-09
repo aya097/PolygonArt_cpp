@@ -3,6 +3,7 @@
 #include "../Canvas/PolygonCanvas.h"
 #include "PaintParams.h"
 #include "Selector/DrawerSelector.h"
+#include "Selector/EditorSelector.h"
 //#include "Editor/VertexEditor.h"
 //#include "Editor/PolygonEditor.h"
 //#include "Drawer/VertexDrawer.h"
@@ -26,6 +27,7 @@ private:
 	//PolygonDrawer polygonDrawer;
 
 	DrawerSelector drawSelector;
+	EditorSelector editSelector;
 	PolygonCanvas canvas;
 	Rect canvasRect;
 	//PaintMode paintMode;
