@@ -7,7 +7,7 @@ void PolygonEditor::Edit(PolygonCanvas& canvas)
 	{
 		EditPolygon(canvas);
 	}
-	UpdateState(canvas);
+	UpdateStatus(canvas);
 }
 
 bool PolygonEditor::EditVertex(PolygonCanvas& canvas)

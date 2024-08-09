@@ -8,7 +8,7 @@ public:
 private:
 	bool EditVertex(PolygonCanvas& canvas);
 	bool EditPolygon(PolygonCanvas& canvas);
-	void UpdateState(PolygonCanvas& canvas);
+	void UpdateStatus(PolygonCanvas& canvas);
 
 	// 選択されている頂点リスト
 	Array<int> selectedVertexIndices;
