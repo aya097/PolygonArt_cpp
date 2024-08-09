@@ -2,10 +2,12 @@
 
 void PolygonEditor::Edit(PolygonCanvas& canvas)
 {
+	// 操作の重複を避ける
 	if (not EditVertex(canvas))
 	{
-
+		EditPolygon(canvas);
 	}
+	UpdateState(canvas);
 }
 
 bool PolygonEditor::EditVertex(PolygonCanvas& canvas)
@@ -110,5 +112,10 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 		}
 	}
 	return isOperated;
+
+}
+
+void PolygonEditor::UpdateStatus(PolygonCanvas& canvas)
+{
 
 }
