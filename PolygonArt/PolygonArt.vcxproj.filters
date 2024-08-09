@@ -148,6 +148,9 @@
     <Filter Include="Source Files\Scene\Drawer">
       <UniqueIdentifier>{bb5333e3-d95e-4025-97fa-a0fc677b1404}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Scene\Selector">
+      <UniqueIdentifier>{88253f5e-507e-4dba-a656-6525342bcc9c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -167,6 +170,18 @@
     </ClCompile>
     <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp">
       <Filter>Source Files\Scene\Drawer</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\Drawer\PolygonDrawer.cpp">
+      <Filter>Source Files\Scene\Drawer</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\Editor\PolygonEditor.cpp">
+      <Filter>Source Files\Scene\Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\Selector\EditorSelector.cpp">
+      <Filter>Source Files\Scene\Selector</Filter>
+    </ClCompile>
+    <ClCompile Include="Scripts\Scene\Selector\DrawerSelector.cpp">
+      <Filter>Source Files\Scene\Selector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -850,6 +865,24 @@
     </ClInclude>
     <ClInclude Include="Scripts\Scene\Drawer\VertexDrawer.h">
       <Filter>Source Files\Scene\Drawer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Downloads\doctest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Drawer\PolygonDrawer.h">
+      <Filter>Source Files\Scene\Drawer</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Editor\PolygonEditor.h">
+      <Filter>Source Files\Scene\Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Selector\DrawerSelector.h">
+      <Filter>Source Files\Scene\Selector</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\Selector\EditorSelector.h">
+      <Filter>Source Files\Scene\Selector</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\Scene\PaintParams.h">
+      <Filter>Source Files\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
