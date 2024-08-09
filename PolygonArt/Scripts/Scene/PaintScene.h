@@ -2,6 +2,7 @@
 #include <Siv3D.hpp>
 #include "../Canvas/PolygonCanvas.h"
 #include "Editor/VertexEditor.h"
+#include "Drawer/VertexDrawer.h"
 
 enum class PaintMode
 {
@@ -28,6 +29,8 @@ private:
 	const PaintOptions PaintOptionSelector(PaintMode paintMode) const;
 
 	VertexEditor vertexEditor;
+	VertexDrawer vertexDrawer;
+
 	PolygonCanvas canvas;
 	Rect canvasRect;
 	PaintMode paintMode;

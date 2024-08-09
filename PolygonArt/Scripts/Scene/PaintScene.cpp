@@ -21,7 +21,8 @@ void PaintScene::Init()
 
 void PaintScene::Update()
 {
-	vertexEditor.Edit(canvas);
+	if(canvasRect.mouseOver())
+		vertexEditor.Edit(canvas);
 }
 
 void PaintScene::Draw()
@@ -30,14 +31,7 @@ void PaintScene::Draw()
 	{
 		canvasRect.draw(Palette::White);
 	}
-
-	// Vertex の描画
-	{
-		for (Canvas::Vertex v : canvas.GetVertices())
-		{
-			Circle{ v.Pos,10 }.draw(Palette::Yellow);
-		}
-	}
+	vertexDrawer.Draw(canvas);
 
 	// Polygon の描画
 	{
