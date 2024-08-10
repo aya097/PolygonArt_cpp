@@ -20,7 +20,9 @@ void FileWriter::Write(const PolygonCanvas& canvas)
 	csv.writeRow(U"polygon");
 	for (auto p : polygon)
 	{
-		csv.writeRow(U"{}:{}"_fmt(p.Index,p.Color));
+		csv.writeRow(U"{},{},{}"_fmt(p.Index[0], p.Index[1], p.Index[2]));
+		csv.writeRow(U"{}"_fmt(p.Color));
+
 	}
 
 	csv.save(FileSystem::PathAppend(*path, U"{}.csv"_fmt(Time::GetSecSinceEpoch())));

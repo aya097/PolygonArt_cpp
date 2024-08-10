@@ -7,7 +7,7 @@ void FileUpdater::Update(PolygonCanvas& canvas)
 	Vec2 distance = Vec2{ 0,40 };
 	if (SimpleGUI::Button(U"読み込み", leftop, width))
 	{
-
+		fileReader.Read(canvas);
 	}
 	if (SimpleGUI::Button(U"保存", leftop + distance, width))
 	{
