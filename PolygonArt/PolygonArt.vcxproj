@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Scripts\Canvas\PolygonCanvas.cpp" />
+    <ClCompile Include="Scripts\FileIO\FileWriter.cpp" />
     <ClCompile Include="Scripts\Scene\ColorPaletteUpdater.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\PolygonDrawer.cpp" />
     <ClCompile Include="Scripts\Scene\Drawer\VertexDrawer.cpp" />
@@ -339,6 +340,7 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Downloads\doctest.h" />
     <ClInclude Include="Scripts\Canvas\PolygonCanvas.h" />
+    <ClInclude Include="Scripts\FileIO\FileWriter.h" />
     <ClInclude Include="Scripts\Scene\ColorPaletteUpdater.h" />
     <ClInclude Include="Scripts\Scene\Drawer\Drawer.h" />
     <ClInclude Include="Scripts\Scene\Drawer\PolygonDrawer.h" />
