@@ -5,7 +5,7 @@
 #include "Selector/DrawerSelector.h"
 #include "Selector/EditorSelector.h"
 #include "ColorPaletteUpdater.h"
-#include "../FileIO/FileWriter.h"
+#include "../FileIO/FileUpdater.h"
 
 
 class PaintScene
@@ -21,7 +21,7 @@ private:
 	DrawerSelector drawSelector;
 	EditorSelector editSelector;
 	ColorPaletteUpdater colorPaletteUpdater{canvas.polygonColor};
-	FileWriter fileWriter;
+	FileUpdater fileUpdater;
 	Rect canvasRect;
 };
 

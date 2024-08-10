@@ -198,6 +198,9 @@
     <ClCompile Include="Scripts\FileIO\FileWriter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Scripts\FileIO\FileUpdater.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="App\icon.ico">
@@ -912,6 +915,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Scripts\FileIO\FileWriter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scripts\FileIO\FileUpdater.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
