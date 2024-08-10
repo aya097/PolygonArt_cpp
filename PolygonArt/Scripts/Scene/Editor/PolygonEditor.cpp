@@ -85,7 +85,7 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 	{
 		auto p = canvas.GetPolygons();
 		auto v = canvas.GetVertices();
-		for (int i = 0; i < p.size(); i++)
+		for (int i = p.size() - 1; i >= 0; i--)
 		{
 			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.leftClicked())
 			{
@@ -99,7 +99,7 @@ bool PolygonEditor::EditPolygon(PolygonCanvas& canvas)
 	{
 		auto p = canvas.GetPolygons();
 		auto v = canvas.GetVertices();
-		for (int i = 0; i < p.size(); i++)
+		for (int i = p.size() - 1; i >= 0; i--)
 		{
 			if (Triangle{ v[p[i].Index[0]].Pos,v[p[i].Index[1]].Pos, v[p[i].Index[2]].Pos }.rightClicked())
 			{

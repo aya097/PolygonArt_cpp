@@ -31,3 +31,9 @@ void PaintScene::Draw()
 	// PaintMode に応じた処理
 	drawSelector.SelectByPaintMode(paintModeUpdater.GetPaintMode())->Draw(canvas);
 }
+
+PaintScene::~PaintScene()
+{
+	FileWriter f;
+	f.Write(canvas);
+}

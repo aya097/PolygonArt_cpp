@@ -15,6 +15,7 @@ public:
 	void Init();
 	void Update();
 	void Draw();
+	~PaintScene();
 private:
 	PolygonCanvas canvas;
 	PaintModeUpdater paintModeUpdater;
