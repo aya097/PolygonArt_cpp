@@ -9,7 +9,8 @@ void PaintScene::Init()
 void PaintScene::Update()
 {
 	paintModeUpdater.Update();
-	colorPaletteUpdater.Update();                 
+	colorPaletteUpdater.Update();
+	fileUpdater.Update(canvas);
 
 	// Select状態の初期化
 	canvas.FillIsSelected(false);
