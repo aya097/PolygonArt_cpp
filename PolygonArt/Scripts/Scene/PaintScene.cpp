@@ -4,6 +4,7 @@ void PaintScene::Init()
 {
 	canvasRect = Rect{ 20,20,1500,1040 };
 	Scene::SetBackground(ColorF{0.9});
+	paintModeUpdater.Init();
 }
 
 void PaintScene::Update()
