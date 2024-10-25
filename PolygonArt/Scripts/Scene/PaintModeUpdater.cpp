@@ -1,4 +1,23 @@
 ﻿#include "PaintModeUpdater.h"
+#include <Siv3D.hpp>
+
+void PaintModeUpdater::Init()
+{
+	//ShowOnlyVertex,
+	//ShowOnlyPolygon,
+	//ShowCanvas,
+	//EditVertex,
+	//EditPolygon,
+	//CopyColor,
+	//ApplyColor
+	instructionTexts[PaintMode::EditVertex] = U"生成:左クリック。\n移動:左クリック長押し。\n削除:右クリック。";
+	instructionTexts[PaintMode::EditPolygon] = U"生成:3つの頂点を選択。\n削除:左クリックで選択した後、右クリック。";
+	instructionTexts[PaintMode::CopyColor] = U"ポリゴン上で右クリックすると、色をコピーできる。";
+	instructionTexts[PaintMode::ApplyColor] = U"ポリゴン上で右クリックすると、色を塗ることができる。";
+	instructionTexts[PaintMode::ShowOnlyVertex] = U"頂点のみ表示する。";
+	instructionTexts[PaintMode::ShowOnlyPolygon] = U"ポリゴンのみ表示する。";
+	instructionTexts[PaintMode::ShowCanvas] = U"頂点、ポリゴン両方を表示する。";
+}
 
 void PaintModeUpdater::Update()
 {
@@ -32,6 +51,23 @@ void PaintModeUpdater::Update()
 	if (SimpleGUI::Button(U"両方表示", leftop + distance * 6, width, (paintMode != PaintMode::ShowCanvas)))
 	{
 		paintMode = PaintMode::ShowCanvas;
+	}
+
+
+	// 機能説明
+	int instructionBoxHeight = 100;
+	int instructionBoxWidth = 350;
+	Rect instructionBox
+	{
+		(int)(leftop + distance * 7).x,
+		(int)(leftop + distance * 7).y,
+		instructionBoxWidth,
+		instructionBoxHeight
+	};
+	instructionBox.draw();
+	if (instructionTexts.contains(paintMode))
+	{
+		instructionFont(instructionTexts[paintMode]).draw(instructionBox.stretched(-10), ColorF{ 0 });
 	}
 }
 
